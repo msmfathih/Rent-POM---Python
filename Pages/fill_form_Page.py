@@ -26,6 +26,8 @@ class FormPage():
         self.enter_engine_number_xpath = Locators.engine_number_xpath
         self.enter_chassis_number_xpath = Locators.chassis_number_xpath
 
+        self.enter_parking_location_xpath = Locators.parking_location_xpath
+
 
 
     def enter_drivername(self, drivername):
@@ -33,9 +35,10 @@ class FormPage():
 
     def enter_mobile_number(self, mobilenumber):
         self.driver.find_element(By.XPATH, self.mobile_number_xpath).send_keys(mobilenumber)
-    def enter_email(self, email):
 
+    def enter_email(self, email):
         self.driver.find_element(By.XPATH, self.email_xpath).send_keys(email)
+
     def enter_driver_password(self, driverpassword):
         self.driver.find_element(By.XPATH, self.password_xpath).send_keys(driverpassword)
 
@@ -65,14 +68,23 @@ class FormPage():
 
 
 
+
     def upload_vihicle_picture(self, vehicle_picture):
         self.driver.find_element(By.XPATH, self.upload_vihicle_picture_xpath).send_keys(vehicle_picture)
 
-    # def enter_engine_number(self, engine_number):
-    #     self.driver.find_element(By.XPATH, self.enter_engine_number_xpath).send_keys(engine_number)
 
-    def enter_chassis_number(self, chassis_number):
-        self.driver.find_element(By.XPATH, self.enter_chassis_number_xpath).send_keys(chassis_number)
+    def enter_parking_location(self, parking_location):
+        self.driver.find_element(By.XPATH, self.enter_parking_location_xpath).send_keys(parking_location)
+
+    # def enter_engine_number(self, engine_number):
+    #     self.driver.find_element(By.XPATH, self.vehicle_number_xpath).send_keys(engine_number)
+
+
+
+
+    #
+    # def enter_chassis_number(self, chassis_number):
+    #     self.driver.find_element(By.XPATH, self.enter_chassis_number_xpath).send_keys(chassis_number)
 
 
 

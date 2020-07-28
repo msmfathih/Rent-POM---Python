@@ -7,6 +7,8 @@ import pytest
 import HtmlTestRunner
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver import ActionChains
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.keys import Keys
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -19,8 +21,7 @@ class LoginTest(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        global str
-        cls.driver = webdriver.Chrome(executable_path="E:\\Automation\\Webdrivers\\chromedriver\\chromedriver.exe")
+        cls.driver = webdriver.Chrome(ChromeDriverManager().install())
         cls.driver.implicitly_wait(10)
         # cls.driver.maximize_window()
 
@@ -71,6 +72,10 @@ class LoginTest(unittest.TestCase):
         driver = self.driver
         formpage = FormPage(driver)
         formpage.enter_vehicle_number("EP-HQ-8165")
+
+        # page = driver.find_elements_by_tag_name("html")
+        # page.send_keys(Keys.END)
+        driver.execute_script("window.scroll(0,700)")
         time.sleep(2)
 
 
@@ -85,28 +90,34 @@ class LoginTest(unittest.TestCase):
         driver = self.driver
         formpage = FormPage(driver)
         formpage.select_vehicle_type("//select[@name='vehicle_type_id']")
+        time.sleep(5)
 
 
     def test_priority9_upload_vehicle_picture(self):
         driver = self.driver
         formpage = FormPage(driver)
         formpage.upload_vihicle_picture("C://Users//fathih//PycharmProjects//Rent_POM//Test//images//python.png")
-        time.sleep(3)
+        time.sleep(8)
 
 
-    # def test_priority10_enter_chassis_number(self):
+    # def test_priority10_enter_engine_number(self):
     #     driver = self.driver
     #     formpage = FormPage(driver)
-    #     formpage.enter_chassis_number("EP-QA84-785")
+    #     formpage.enter_engine_number("dsf34534534")
+    #     time.sleep(3)
 
-
+    def test_priority10_parking_location(self):
+        driver = self.driver
+        formpage = FormPage(driver)
+        formpage.enter_parking_location("AbuDhabi001")
+    #to be couninue.....
 
 
 
 
     @classmethod
     def tearDownClass(cls):
-        # cls.driver.quite()
+        cls.driver.quite()
         print("Test has completed")
 
 

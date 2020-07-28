@@ -28,10 +28,13 @@ class Locators():
     select_vehicle_owner_permission_xpath = "//select[@name='owner_id']"
     select_vehicle_type_xpath = "//select[@name='vehicle_type_id']"
 
+
     #upload picture of vehicle
     picture_vehicle_xpath = "//input[@name='vehicle_picture']"
     engine_number_xpath = "//input[@name='engine_number']"
     chassis_number_xpath = "//input[@name='chassis_number']"
+
+    parking_location_xpath = "//input[@name='parking_location']"
 
 
 
