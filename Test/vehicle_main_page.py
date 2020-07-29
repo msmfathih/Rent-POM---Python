@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver import ActionChains
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.keys import Keys
+import timeout_decorator
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
@@ -35,7 +36,7 @@ class LoginTest2(unittest.TestCase):
         ownerpage.enter_password("admin@123")
         ownerpage.click_login()
 
-
+    # @timeout_decorator.timeout(20)
     def test_priority2_click_dropdown(self):
         driver = self.driver
         ownerpage = OwnerPage(driver)
@@ -57,7 +58,7 @@ class LoginTest2(unittest.TestCase):
     def test_priority5_enter_owner_name(self):
         driver = self.driver
         ownerpage = OwnerPage(driver)
-        ownerpage.enter_owner_name("fathih")
+        ownerpage.enter_owner_name("aadil")
 
 
     def test_priority6_enter_nic_number(self):
@@ -72,17 +73,11 @@ class LoginTest2(unittest.TestCase):
         ownerpage.enter_phone_number("052854262")
 
 
+    @unittest.skip("demostrating skipping")
     def test_priority8_submit_form(self):
         driver = self.driver
         ownerpage = OwnerPage(driver)
         ownerpage.submit_form("//button[@class='btn btn-primary btn-submit']")
-
-
-
-
-
-
-
 
 
 
