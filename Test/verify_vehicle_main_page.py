@@ -83,8 +83,9 @@ class LoginTest3(unittest.TestCase):
         # cls.driver.quite()
         print("Test has completed")
 
+
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:/Users/fathih/PycharmProjects/Rent_POM/Reports'))
 
 
 
