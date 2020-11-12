@@ -110,7 +110,7 @@ class LoginTest(unittest.TestCase):
         driver = self.driver
         formpage = FormPage(driver)
         formpage.enter_parking_location("AbuDhabi001")
-    #to be couninue.....
+    #to be couninued.....
 
 
 

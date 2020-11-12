@@ -67,8 +67,6 @@ class FormPage():
         sel2.select_by_index(2)
 
 
-
-
     def upload_vihicle_picture(self, vehicle_picture):
         self.driver.find_element(By.XPATH, self.upload_vihicle_picture_xpath).send_keys(vehicle_picture)
 

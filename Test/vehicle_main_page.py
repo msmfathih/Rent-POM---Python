@@ -52,7 +52,7 @@ class LoginTest2(unittest.TestCase):
     def test_priority4_add_vehicle_owner(self):
         driver = self.driver
         ownerpage = OwnerPage(driver)
-        ownerpage.add_vihicle_owner("//a[@class='btn btn-success']")
+        ownerpage.add_vihicle_owneselect_vehicle_typer("//a[@class='btn btn-success']")
 
 
     def test_priority5_enter_owner_name(self):
